@@ -23,6 +23,14 @@ const students = [];
 // post route to add new students(c)
 app.post('/students', (req, res) => {
   const { name, grade } = req.body;
+
+  const newStudent = new Student(name, grade);
+  students.push(newStudent);
+
+  res.status(201).json({
+    message: 'Student added successfully.',
+    student: newStudent.getDetails()
+  });
 }); 
 
 // get route to return all students(d)
