@@ -20,25 +20,12 @@ class Student {
 
 const students = [];
 
-// post route to add new students
+// post route to add new students(c)
 app.post('/students', (req, res) => {
   const { name, grade } = req.body;
-
-  /* Basic validation
-  if (!name || grade === undefined) {
-    return res.status(400).json({ error: 'Please provide both name and grade.' });
-  }
-
-  const newStudent = new Student(name, grade);
-  students.push(newStudent);
-
-  res.status(201).json({
-    message: 'Student added successfully.',
-    student: newStudent.getDetails()
-  });*/
 }); 
 
-// get route to return all students
+// get route to return all students(d)
 app.get('/students', (req, res) => {
   const allDetails = students.map(student => student.getDetails());
   res.json(allDetails);
